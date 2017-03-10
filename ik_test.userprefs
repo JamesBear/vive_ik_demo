@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ViveIKDemo.cs">
+    <Files>
+      <File FileName="Assets\Scripts\PublicDataStructure.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\RootMotion\FinalIK\IK Solvers\FBIKChain.cs" Line="83" Column="5" />
+      <File FileName="Assets\Scripts\ViveIKDemo.cs" Line="93" Column="27" />
+      <File FileName="Assets\Plugins\RootMotion\FinalIK\IK Components\LimbIK.cs" Line="11" Column="25" />
+      <File FileName="Assets\Plugins\RootMotion\FinalIK\IK Components\IK.cs" Line="9" Column="37" />
+      <File FileName="Assets\Plugins\RootMotion\Shared Scripts\SolverManager.cs" Line="9" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

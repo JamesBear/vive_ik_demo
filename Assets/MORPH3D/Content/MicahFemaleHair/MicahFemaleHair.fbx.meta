@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 8cf8fe6ca068d584c8bcb1ce80f251b5
+timeCreated: 1486183373
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: abdomenLower
+    100002: abdomenUpper
+    100004: BelowJaw
+    100006: CenterBrow
+    100008: chestLower
+    100010: chestUpper
+    100012: head
+    100014: hip
+    100016: lBrowInner
+    100018: lBrowMid
+    100020: lBrowOuter
+    100022: lCheekLower
+    100024: lCheekUpper
+    100026: lEar
+    100028: lJawClench
+    100030: lowerFaceRig
+    100032: lowerJaw
+    100034: M3DFemale_LOD0
+    100036: //RootNode
+    100038: MichaFemaleHair
+    100040: MichaFemaleHair.Shape_LOD0
+    100042: MichaFemaleHair.Shape_LOD1
+    100044: MichaFemaleHair.Shape_LOD2
+    100046: MichaFemaleHair.Shape_LOD3
+    100048: neckLower
+    100050: neckUpper
+    100052: rBrowInner
+    100054: rBrowMid
+    100056: rBrowOuter
+    100058: rCheekLower
+    100060: rCheekUpper
+    100062: rEar
+    100064: rEyelidOuter
+    100066: rEyelidUpper
+    100068: rEyelidUpperOuter
+    100070: rJawClench
+    100072: upperFaceRig
+    400000: abdomenLower
+    400002: abdomenUpper
+    400004: BelowJaw
+    400006: CenterBrow
+    400008: chestLower
+    400010: chestUpper
+    400012: head
+    400014: hip
+    400016: lBrowInner
+    400018: lBrowMid
+    400020: lBrowOuter
+    400022: lCheekLower
+    400024: lCheekUpper
+    400026: lEar
+    400028: lJawClench
+    400030: lowerFaceRig
+    400032: lowerJaw
+    400034: M3DFemale_LOD0
+    400036: //RootNode
+    400038: MichaFemaleHair
+    400040: MichaFemaleHair.Shape_LOD0
+    400042: MichaFemaleHair.Shape_LOD1
+    400044: MichaFemaleHair.Shape_LOD2
+    400046: MichaFemaleHair.Shape_LOD3
+    400048: neckLower
+    400050: neckUpper
+    400052: rBrowInner
+    400054: rBrowMid
+    400056: rBrowOuter
+    400058: rCheekLower
+    400060: rCheekUpper
+    400062: rEar
+    400064: rEyelidOuter
+    400066: rEyelidUpper
+    400068: rEyelidUpperOuter
+    400070: rJawClench
+    400072: upperFaceRig
+    4300000: MichaFemaleHair.Shape_LOD0
+    4300002: MichaFemaleHair.Shape_LOD1
+    4300004: MichaFemaleHair.Shape_LOD2
+    4300006: MichaFemaleHair.Shape_LOD3
+    9500000: //RootNode
+    13700000: MichaFemaleHair.Shape_LOD0
+    13700002: MichaFemaleHair.Shape_LOD1
+    13700004: MichaFemaleHair.Shape_LOD2
+    13700006: MichaFemaleHair.Shape_LOD3
+    20500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

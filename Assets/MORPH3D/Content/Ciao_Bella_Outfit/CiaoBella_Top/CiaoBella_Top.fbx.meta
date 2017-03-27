@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 5acb94d8eab81864b80eacbe307063d9
+timeCreated: 1486429945
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: abdomenLower
+    100002: abdomenUpper
+    100004: chestLower
+    100006: chestUpper
+    100008: //RootNode
+    100010: CiaoBellaTop_6618
+    100012: CiaoBellaTop_6618_LOD0
+    100014: CiaoBellaTop_6618_LOD1
+    100016: CiaoBellaTop_6618_LOD2
+    100018: CiaoBellaTop_6618_LOD3
+    100020: head
+    100022: hip
+    100024: lCollar
+    100026: lEar
+    100028: lEye
+    100030: lForearmBend
+    100032: lPectoral
+    100034: lShldrBend
+    100036: lShldrTwist
+    100038: lThighBend
+    100040: lThighTwist
+    100042: neckLower
+    100044: neckUpper
+    100046: pelvis
+    100048: rCollar
+    100050: rEar
+    100052: rEye
+    100054: rForearmBend
+    100056: rPectoral
+    100058: rShldrBend
+    100060: rShldrTwist
+    100062: rThighBend
+    100064: rThighTwist
+    100066: upperFaceRig
+    100068: upperTeeth
+    400000: abdomenLower
+    400002: abdomenUpper
+    400004: chestLower
+    400006: chestUpper
+    400008: //RootNode
+    400010: CiaoBellaTop_6618
+    400012: CiaoBellaTop_6618_LOD0
+    400014: CiaoBellaTop_6618_LOD1
+    400016: CiaoBellaTop_6618_LOD2
+    400018: CiaoBellaTop_6618_LOD3
+    400020: head
+    400022: hip
+    400024: lCollar
+    400026: lEar
+    400028: lEye
+    400030: lForearmBend
+    400032: lPectoral
+    400034: lShldrBend
+    400036: lShldrTwist
+    400038: lThighBend
+    400040: lThighTwist
+    400042: neckLower
+    400044: neckUpper
+    400046: pelvis
+    400048: rCollar
+    400050: rEar
+    400052: rEye
+    400054: rForearmBend
+    400056: rPectoral
+    400058: rShldrBend
+    400060: rShldrTwist
+    400062: rThighBend
+    400064: rThighTwist
+    400066: upperFaceRig
+    400068: upperTeeth
+    4300000: CiaoBellaTop_6618_LOD0
+    4300002: CiaoBellaTop_6618_LOD1
+    4300004: CiaoBellaTop_6618_LOD2
+    4300006: CiaoBellaTop_6618_LOD3
+    9500000: //RootNode
+    13700000: CiaoBellaTop_6618_LOD0
+    13700002: CiaoBellaTop_6618_LOD1
+    13700004: CiaoBellaTop_6618_LOD2
+    13700006: CiaoBellaTop_6618_LOD3
+    20500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.0625
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

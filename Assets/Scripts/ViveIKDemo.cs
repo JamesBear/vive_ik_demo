@@ -56,6 +56,8 @@ public class ViveIKDemo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+		UpdateIK();
+
         bool gripClicked = false;
         for (int i = (int)SteamVR_TrackedObject.EIndex.Device1; i < (int)SteamVR_TrackedObject.EIndex.Device15; i++)
         {
@@ -137,6 +139,7 @@ public class ViveIKDemo : MonoBehaviour {
         foreach (var item in ikComps)
         {
 			var limbik = item as RootMotion.FinalIK.LimbIK;
+			limbik.solver.bendNormal = new Vector3 (1, 0, 0);
 			string targetName = limbik.solver.target.name;
 			if (targetName.StartsWith("Controller"))
 			{
@@ -155,6 +158,18 @@ public class ViveIKDemo : MonoBehaviour {
         }
 
     }
+
+
+	void UpdateIK()
+	{
+		var ikComps = GetComponents<RootMotion.FinalIK.LimbIK>();
+		foreach (var item in ikComps)
+		{
+			var limbik = item as RootMotion.FinalIK.LimbIK;
+			if (limbik.solver.goal == AvatarIKGoal.LeftFoot || limbik.solver.goal == AvatarIKGoal.RightFoot)
+				limbik.solver.bendNormal = new Vector3 (1, 0, 0);
+		}
+	}
 
     Pose GetPose(int index)
     {

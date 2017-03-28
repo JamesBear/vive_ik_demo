@@ -168,6 +168,10 @@ public class ViveIKDemo : MonoBehaviour {
 			var limbik = item as RootMotion.FinalIK.LimbIK;
 			if (limbik.solver.goal == AvatarIKGoal.LeftFoot || limbik.solver.goal == AvatarIKGoal.RightFoot)
 				limbik.solver.bendNormal = new Vector3 (1, 0, 0);
+			else if (limbik.solver.goal == AvatarIKGoal.LeftHand)
+				limbik.solver.bendNormal = new Vector3 (0, 0, -1);
+			else if (limbik.solver.goal == AvatarIKGoal.RightHand)
+				limbik.solver.bendNormal = new Vector3 (0, 0, 1);
 		}
 	}
 

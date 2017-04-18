@@ -15,6 +15,7 @@ enum TrackerRole
     Torso,
     FootRight,
     FootLeft,
+    Head,
 }
 
 class DumbConfigFile

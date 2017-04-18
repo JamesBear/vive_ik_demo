@@ -369,6 +369,7 @@ ModelImporter:
     4300002: M3DFemale_LOD1
     4300004: M3DFemale_LOD2
     4300006: M3DFemale_LOD3
+    7400000: Take 001
     9500000: //RootNode
     11400000: hip
     11400002: hip
@@ -384,6 +385,7 @@ ModelImporter:
     11400022: rHandAttachmentPointR
     11400024: rHandAttachmentPointR
     11400026: //RootNode
+    11400028: //RootNode
     13700000: M3DFemale_LOD0
     13700002: M3DFemale_LOD1
     13700004: M3DFemale_LOD2
@@ -396,7 +398,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

@@ -28,6 +28,7 @@ public class ViveIKDemo : MonoBehaviour {
     public List<GameObject> deviceMarkers;
     public GameObject leftHandOffsetObject;
     public GameObject rightHandOffsetObject;
+    public GameObject markerHead;
 
     Dictionary<int, Transform> deviceMarkerDict = new Dictionary<int, Transform>();
     Stage stage = Stage.Stage0;
@@ -130,6 +131,7 @@ public class ViveIKDemo : MonoBehaviour {
         float ratio = customHeight / initHeight;
         ankleMarkerLeft.transform.position *= ratio;
         ankleMarkerRight.transform.position *= ratio;
+        markerHead.transform.position *= ratio;
         transform.localScale *= ratio;
     }
 
@@ -201,6 +203,8 @@ public class ViveIKDemo : MonoBehaviour {
                 offsetTrackedList.Add(trackedInfo);
             }
         }
+
+        markerHead.transform.parent = Camera.main.transform;
         
     }
 

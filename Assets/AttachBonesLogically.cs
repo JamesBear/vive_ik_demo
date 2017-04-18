@@ -63,6 +63,8 @@ public class AttachBonesLogically : MonoBehaviour {
 		dict.Add (trans.name, trans);
 		foreach (Transform child in trans)
 		{
+            if (child.name.Contains("(moved)"))
+                continue;
 			Traverse (child, dict);
 		}
 	}

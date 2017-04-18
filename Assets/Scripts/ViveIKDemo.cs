@@ -29,12 +29,14 @@ public class ViveIKDemo : MonoBehaviour {
     public GameObject leftHandOffsetObject;
     public GameObject rightHandOffsetObject;
     public GameObject markerHead;
+    public Transform eyeTransform;
 
     Dictionary<int, Transform> deviceMarkerDict = new Dictionary<int, Transform>();
     Stage stage = Stage.Stage0;
     Queue<object> logQueue = new Queue<object>(); // logs in logQueue can be seen in VR
     int maxLogCount = 8;
     float initHeight = 1.75f;
+    IKDemoModelState initModelState;
 
     Dictionary<TrackerRole, int> trackers = new Dictionary<TrackerRole, int>();
     List<OffsetTracking> offsetTrackedList = new List<OffsetTracking>();
@@ -49,11 +51,22 @@ public class ViveIKDemo : MonoBehaviour {
         {
             deviceMarkerDict[(int)item.GetComponent<SteamVR_TrackedObject>().index] = item.transform;
         }
-        InitWithCustomHeight();
+        //InitWithCustomHeight();
 
         animationBlender = GetComponent<AnimationBlendTest>();
+        RecordInitModelState();
 	}
 	
+    void RecordInitModelState()
+    {
+        initModelState = new IKDemoModelState();
+        initModelState.eyePos = eyeTransform.position;
+        initModelState.ankleMarkerLeftPos = ankleMarkerLeft.transform.position;
+        initModelState.ankleMarkerRightPos = ankleMarkerRight.transform.position;
+        initModelState.markerHeadPos = markerHead.transform.position;
+        initModelState.modelScale = transform.localScale;
+    }
+
 	// Update is called once per frame
 	void Update () {
         
@@ -64,6 +77,11 @@ public class ViveIKDemo : MonoBehaviour {
         {
             var device = SteamVR_Controller.Input(i);
             gripClicked |= device.GetPressUp(SteamVR_Controller.ButtonMask.Grip);
+        }
+
+        if (stage == Stage.Stage0)
+        {
+            AutoAdjustHeight();
         }
 
         if (stage == Stage.Stage0 && (Input.GetKeyUp(KeyCode.Alpha1) || Input.GetMouseButtonUp(2) || gripClicked))
@@ -112,6 +130,19 @@ public class ViveIKDemo : MonoBehaviour {
         }
     }
 
+    void AutoAdjustHeight()
+    {
+
+        float actualEyeHeight = Camera.main.transform.position.y;
+
+        actualEyeHeight = Mathf.Clamp(actualEyeHeight, 0.7f, 2.5f);
+
+        float eyeHeightToBodyHeadRatio = initModelState.eyePos.y / initHeight;
+        float estimatedHeight = actualEyeHeight / eyeHeightToBodyHeadRatio;
+
+        AdjustToHeight(estimatedHeight);
+    }
+
     void InitWithCustomHeight()
     {
         float customHeight;
@@ -129,10 +160,10 @@ public class ViveIKDemo : MonoBehaviour {
     void AdjustToHeight(float customHeight)
     {
         float ratio = customHeight / initHeight;
-        ankleMarkerLeft.transform.position *= ratio;
-        ankleMarkerRight.transform.position *= ratio;
-        markerHead.transform.position *= ratio;
-        transform.localScale *= ratio;
+        ankleMarkerLeft.transform.position = initModelState.ankleMarkerLeftPos*ratio;
+        ankleMarkerRight.transform.position = initModelState.ankleMarkerRightPos*ratio;
+        markerHead.transform.position = initModelState.markerHeadPos*ratio;
+        transform.localScale = initModelState.modelScale*ratio;
     }
 
     void StartIK()

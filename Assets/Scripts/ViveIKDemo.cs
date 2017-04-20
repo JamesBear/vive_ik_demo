@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using RootMotion.FinalIK;
 
 /// <summary>
 /// A tracker is 'bound' to one foot, then its pose(position and rotation) can be 
@@ -43,7 +44,8 @@ public class ViveIKDemo : MonoBehaviour {
 	Transform leftHandTarget = null;
 	Transform rightHandTarget = null;
     AnimationBlendTest animationBlender;
-    
+    List<LimbIK> ikList = new List<LimbIK>(); // to fully control the execution orders of the IK solvers
+
 
     // Use this for initialization
     void Start () {
@@ -166,46 +168,87 @@ public class ViveIKDemo : MonoBehaviour {
         transform.localScale = initModelState.modelScale*ratio;
     }
 
+
     void StartIK()
     {
         var ikComps = GetComponents<RootMotion.FinalIK.LimbIK>();
+
+        //     foreach (var item in ikComps)
+        //     {
+        //var limbik = item as RootMotion.FinalIK.LimbIK;
+        //limbik.solver.bendNormal = new Vector3 (1, 0, 0);
+        //string targetName = limbik.solver.target.name;
+        //if (targetName.StartsWith("Controller"))
+        //{
+        //	if (targetName.Contains ("left")) {
+        //		limbik.solver.target = leftHandTarget;
+        //	} else {
+        //		limbik.solver.target = rightHandTarget;
+        //	}
+        //	if (limbik.solver.target != null)
+        //		item.enabled = true;
+        //}
+        //else
+        //{
+        //	item.enabled = true;
+        //}
+        //     }
+
+        int headIndex = -1;
+
         foreach (var item in ikComps)
         {
-			var limbik = item as RootMotion.FinalIK.LimbIK;
-			limbik.solver.bendNormal = new Vector3 (1, 0, 0);
-			string targetName = limbik.solver.target.name;
-			if (targetName.StartsWith("Controller"))
-			{
-				if (targetName.Contains ("left")) {
-					limbik.solver.target = leftHandTarget;
-				} else {
-					limbik.solver.target = rightHandTarget;
-				}
-				if (limbik.solver.target != null)
-					item.enabled = true;
-			}
-			else
-			{
-				item.enabled = true;
-			}
+            var limbik = item as RootMotion.FinalIK.LimbIK;
+            limbik.solver.bendNormal = new Vector3(1, 0, 0);
+            string targetName = limbik.solver.target.name;
+            if (targetName.StartsWith("Controller"))
+            {
+                if (targetName.Contains("left"))
+                {
+                    limbik.solver.target = leftHandTarget;
+                }
+                else {
+                    limbik.solver.target = rightHandTarget;
+                }
+                if (limbik.solver.target != null)
+                    ikList.Add(item);
+            }
+            else
+            {
+                if (item.solver.target == markerHead)
+                    headIndex = ikList.Count;
+
+                ikList.Add(item);
+            }
+
+            item.enabled = true;
         }
 
+        if (headIndex >= 0)
+        {
+            Swap(ikList, 0, headIndex);
+        }
     }
 
 
-	void UpdateIK()
+    void UpdateIK()
 	{
-		var ikComps = GetComponents<RootMotion.FinalIK.LimbIK>();
-		foreach (var item in ikComps)
-		{
-			var limbik = item as RootMotion.FinalIK.LimbIK;
-			if (limbik.solver.goal == AvatarIKGoal.LeftFoot || limbik.solver.goal == AvatarIKGoal.RightFoot)
-				limbik.solver.bendNormal = new Vector3 (1, 0, 0);
-			else if (limbik.solver.goal == AvatarIKGoal.LeftHand)
-				limbik.solver.bendNormal = new Vector3 (0, 0, -1);
-			else if (limbik.solver.goal == AvatarIKGoal.RightHand)
-				limbik.solver.bendNormal = new Vector3 (0, 0, 1);
-		}
+        var ikComps = GetComponents<RootMotion.FinalIK.LimbIK>();
+        foreach (var item in ikComps)
+        {
+            var limbik = item as RootMotion.FinalIK.LimbIK;
+            if (limbik.solver.goal == AvatarIKGoal.LeftFoot || limbik.solver.goal == AvatarIKGoal.RightFoot)
+                limbik.solver.bendNormal = new Vector3(1, 0, 0);
+            //else if (limbik.solver.goal == AvatarIKGoal.LeftHand)
+            //	limbik.solver.bendNormal = new Vector3 (0, 0, -1);
+            //else if (limbik.solver.goal == AvatarIKGoal.RightHand)
+            //	limbik.solver.bendNormal = new Vector3 (0, 0, 1);
+        }
+
+        foreach (var item in ikList)
+        {
+            item.UpdateSolverExternal();
+        }
 	}
 
     Pose GetPose(int index)

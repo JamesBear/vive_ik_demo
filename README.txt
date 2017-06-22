@@ -11,8 +11,12 @@ To get the full documentation:
 To download the executable:
 - Download "vive_ik_test.rar"
 
-Note that the given source code is only for your reference and can't compile without error in Unity. To open this project in Unity:
-- Either buy an IK plugin (for example, FinalIK) at assetstore or implement one yourself.
+To run in Unity and modify the source code:
+- Download this project and open the folder with Unity 5.4 (mine is 5.4.2f2).
+- Double click the scene vive_ik_demo and hit "Play" button.
+
+Special thanks to:
+- RootMotion for their FinalIK. This project took inspiration from it. If you want to use professional multi-joint IK (or any kind of IK) in your game, go check out FinalIK in Unity AssetStore.
 
 
 Copyright: HTC Corporation
@@ -33,8 +37,13 @@ Vive IK Demo是一个使用HTC Vive和HTC追踪器实现的全身动作捕捉程序。
 怎么获得可执行程序：
 - 下载"vive_ik_test.rar"
 
-注意，本项目的源代码仅供参考，而不能在Unity中顺利编译。想要编译成功需要：
-- 在assetstore购买IK插件（比如FinalIK），或者自己实现一个IK插件。
+怎么在Unity中运行及修改代码：
+- 下载本工程，然后用Unity 5.4打开本文件夹（我用的是5.4.2f2）
+- 双击vive_ik_demo场景，然后点击"Play"按钮
+
+特别感谢：
+- RootMotion，本工程借鉴了它们的FinalIK，如果你想在游戏里加上多骨骼IK，去AssetStore里找找FinalIK吧。
 
 
 Copyright: HTC Corporation
+Contact: james_xiong@htc.com
